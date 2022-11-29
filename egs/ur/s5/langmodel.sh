@@ -1,10 +1,11 @@
 #!/bin/bash
 #set-up for single machine or cluster based execution
-. ./cmd.sh
+chmod +x cmd.sh
+cmd.sh
 #set the paths to binaries and other executables
-[ -f path.sh ] && . ./path.sh
+[ -f path.sh ] && path.sh
 kaldi_root_dir='/content/kaldi_ASR'
-basepath='/content/kaldi_ASR/egs/urdu'
+basepath='/content/kaldi_ASR/egs/ur/s5'
 #Creating input to the LM training
 #corpus file contains list of all sentences
 cat $basepath/data/train/text | awk '{first = $1; $1 = ""; print $0; }' > $basepath/data/train/trans
